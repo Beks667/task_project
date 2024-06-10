@@ -177,10 +177,10 @@ SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Укажите SMTP-сервер, используемый для отправки почты
-EMAIL_PORT = 587 # Порт SMTP-сервера
+EMAIL_PORT = 587 # Порт SMTP-серве
 EMAIL_USE_TLS = True  # Использовать ли TLS для безопасного соединения
-EMAIL_HOST_USER = 'beksturgunbaev@gmail.com'  # Ваша почта для аутентификации на SMTP-сервере
-EMAIL_HOST_PASSWORD = ''  # Ваш пароль для аутентификации на SMTP-сервере
+EMAIL_HOST_USER="beksturgunbaev@gmail.com"
+EMAIL_HOST_PASSWORD=''  # Ваш пароль для аутентификации на SMTP-сервере
 DEFAULT_FROM_EMAIL = 'beksturgunbaev@gmail.com'  # Адрес отправителя по умолчанию
 
 BASE_URL = 'http://localhost:8000'

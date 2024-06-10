@@ -27,7 +27,7 @@ class RegisterUserViewSet(generics.CreateAPIView):
             user = serializer.save()
             refresh = RefreshToken.for_user(user)
             # Отправка письма с подтверждением
-            send_confirmation_email(user)
+            # send_confirmation_email(user)
             return Response(
                 {'user': serializer.data,
                  'token': {'refresh': str(refresh), 'access': str(refresh.access_token),
@@ -38,11 +38,11 @@ class RegisterUserViewSet(generics.CreateAPIView):
 from django.core.mail import send_mail
 
 
-def send_confirmation_email(user):
-    subject = 'Подтверждение регистрации'
-    message = 'Добро пожаловать! Для завершения регистрации перейдите по ссылке: <ваша_ссылка>'
-    recipient_list = [user.email]
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list)
+# def send_confirmation_email(user):
+#     subject = 'Подтверждение регистрации'
+#     message = 'Добро пожаловать! Для завершения регистрации перейдите по ссылке: <ваша_ссылка>'
+#     recipient_list = [user.email]
+#     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_list)
 
 
 class LoginView(generics.GenericAPIView):
